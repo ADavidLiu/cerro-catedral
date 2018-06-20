@@ -1,0 +1,52 @@
+.divided {
+    @include atSmall {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+
+        &-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        &-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            pointer-events: none;
+            transition: all .25s;
+            backface-visibility: hidden;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba($color-black, .4);
+            transition: all .25s;
+        }
+
+        &:hover {
+            .divided__item-bg {
+                transform: scale(1.05);
+            }
+
+            &:after {
+                background-color: rgba($color-black, .3);
+            }
+        }
+    }
+}

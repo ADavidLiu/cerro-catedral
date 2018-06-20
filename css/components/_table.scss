@@ -1,0 +1,45 @@
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    th,
+    td {
+        padding: .667rem 1.333rem !important;
+        @extend .paragraph;
+        @extend .paragraph--big;
+        @include atSmall {
+            padding: .5rem 1rem !important;
+        }
+    }
+
+    th {
+        background-color: $color-dark-2;
+        color: $color-white;
+        border-top: 0 !important;
+    }
+
+    td {
+        border-top: 2px solid $color-gray !important;
+    }
+
+    tr {
+        &:first-child + tr td {
+            border-top: 0 !important;
+        }
+    }
+
+    &--primary {
+        th {
+            background-color: $color-primary;
+        }
+    }
+
+    &--center {
+        th,
+        td {
+            text-align: center;
+        }
+    }
+}

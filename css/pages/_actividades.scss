@@ -1,0 +1,43 @@
+.actividades,
+.servicios {
+    &__menu {
+        margin: -10px;
+        @include atSmall {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        &-item {
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+            @include atSmall {
+                margin: 0;
+            }
+
+            h4 {
+                transition: all .25s;
+            }
+
+            &:hover {
+                h4 {
+                    color: darken($color-primary, 10%);
+                }
+            }
+
+            & + & {
+                @include atSmall {
+                    margin-left: 1.5rem;
+                }
+                @include atLarge {
+                    margin-left: 2rem;
+                }
+                @include atExtralarge {
+                    margin-left: 2.5rem;
+                }
+            }
+        }
+    }
+}

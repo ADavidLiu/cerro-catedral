@@ -1,0 +1,27 @@
+.marquee {
+	height: 2.5rem;
+	width: 100%;
+	overflow: hidden;
+    position: relative;
+    @include atSmall {
+        height: 1.875rem;
+    }
+
+	&__content {
+		display: block;
+		width: 200%;
+		height: 2rem;
+		position: absolute;
+		overflow: hidden;
+        animation: marquee 20s linear infinite;
+        backface-visibility: hidden;
+        @include atSmall {
+            height: 1.5rem;
+        }
+	}
+
+	p {
+		float: left;
+		width: 50%;
+	}
+}

@@ -1,0 +1,82 @@
+.btn {
+    padding: 1.333rem 0;
+    width: 20.625rem;
+    border-radius: 5rem;
+    background-color: $color-primary;
+    text-align: center;
+    color: $color-white;
+    font-family: $font-main;
+    font-weight: 500;
+    font-size: 1.5625rem;
+    display: block;
+    backface-visibility: hidden;
+    @include linkStates($color-white, none);
+    @include atSmall {
+        padding: 1rem 0;
+    }
+
+    &__icon {
+        width: 50%;
+        backface-visibility: hidden;
+    }
+
+    &:hover {
+        background-color: darken($color-primary, 5%);
+    }
+
+    &--bg-secondary-lgt {
+        background-color: $color-secondary-lgt;
+        color: $color-secondary-alt-2;
+        @include linkStates($color-secondary-alt-2, none);
+
+        &:hover {
+            background-color: $color-white;
+        }
+    }
+
+    &--bg-gradient {
+        background-image: linear-gradient(to bottom left, #3bafd4, #0080c2);
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &--outline {
+        border: 3px solid $color-white;
+        background: transparent;
+        color: $color-white;
+        @include linkStates($color-white, none);
+
+        &:hover {
+            color: $color-secondary-alt-2;
+        }
+    }
+
+    &--round {
+        height: 4.6875rem;
+        width: 4.6875rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &--med {
+        width: 16.875rem;
+        font-size: 1.25rem;
+        padding: 1rem 0;
+        @include atSmall {
+            padding: .75rem 0;
+        }
+    }
+
+    &--small {
+        max-width: 100%;
+        padding: 1rem 1.333rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+        @include atSmall {
+            padding: .75rem 1rem;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+html,
+body {
+    overflow-x: hidden;
+    font-size: 10px;
+    @include atSmall {
+        font-size: 12px;
+    }
+    @include atMedium {
+        font-size: 13px;
+    }
+    @include atLarge {
+        font-size: 13px;
+    }
+}
+
+main {
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+ul,
+ol,
+span {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    @extend .heading-primary;
+}
+
+h2 {
+    @extend .heading-secondary;
+}
+
+h3 {
+    @extend .heading-tertiary;
+}
+
+h4 {
+    @extend .heading-quaternary;
+}
+
+p {
+    @extend .paragraph;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    transition: all .25s;
+    @include linkStates(inherit, none);
+
+    &:hover {
+        color: $color-primary;
+    }
+
+    &.link-bg-primary {
+        &:hover {
+            color: $color-dark;
+        }
+    }
+}
+
+.u-color-primary {
+    a {
+        &:hover {
+            color: darken($color-primary, 10%);
+        }
+    }
+}
+
+ul,
+ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+input,
+select,
+button {
+    border: none;
+
+    &:focus {
+        outline: none !important;
+    }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}

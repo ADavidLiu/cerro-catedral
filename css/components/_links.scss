@@ -1,0 +1,35 @@
+.links {
+    max-width: 600px;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+
+        &-label {
+            margin-right: 1rem;
+        }
+
+        &-btn {
+            padding: 4px 18px;
+            font-weight: 400;
+            border: 2px solid $color-primary;
+            border-radius: 4px;
+            color: $color-primary;
+            transition: all .25s;
+            @extend .paragraph;
+            @extend .paragraph--small;
+            @include linkStates($color-primary, none);
+
+            &:hover {
+                background-color: $color-primary;
+                color: $color-white;
+            }
+        }
+
+        & + & {
+            border-top: 1px solid $color-gray-drk;
+        }
+    }
+}

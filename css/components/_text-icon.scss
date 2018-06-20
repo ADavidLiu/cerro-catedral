@@ -1,0 +1,42 @@
+.text-icon {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    @include atSmall {
+        display: inline-flex;
+    }
+
+    &__img {
+        display: block;
+        margin: 0 auto 10px auto;
+        height: 2.5rem;
+        @include atSmall {
+            margin: 0 10px 0 0;
+            height: 1.875rem;
+        }
+
+        &--small {
+            height: 1.667rem;
+            @include atSmall {
+                height: 1.25rem;
+            }
+        }
+
+        &--big {
+            height: 3.333rem;
+            @include atSmall {
+                height: 2.5rem;
+            }
+        }
+    }
+
+    &--keep {
+        display: inline-flex;
+
+        .text-icon {
+            &__img {
+                margin: 0 10px 0 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,211 @@
+.parte {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &__clima {
+        background-image: url("../images/clima-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 6.25rem 0;
+
+        &-box {
+            border: 1px solid $color-gray-lgt-4;
+
+            &-header {
+                padding: 1.667rem;
+                background-color: $color-primary;
+                @include atSmall {
+                    padding: 1.25rem;
+                }
+                @include atMedium {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+
+            &-content {
+                border-top: 1px solid $color-gray-lgt-4;
+                background-color: rgba($color-black, .6);
+                padding: 3.75rem 3.125rem;
+                @include atSmall {
+                    padding: 2rem;
+                }
+                @include atMedium {
+                    padding: 3.75rem 3.125rem;
+                }
+
+                &--alt {
+                    padding: 2.5rem 3.125rem;
+                    @include atSmall {
+                        padding: 1rem 2rem;
+                    }
+                    @include atMedium {
+                        padding: 2.5rem 3.125rem;
+                    }
+                }
+            }
+        }
+
+        &-actual {
+            text-align: center;
+
+            &-icon {
+                height: 6.25rem;
+                @include atSmall {
+                    height: 4.6875rem;
+                }
+            }
+        }
+
+        &-info {
+            &-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        &-riesgo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+
+            &-flag {
+                height: 3.125rem;
+                width: 5.625rem;
+                max-width: 5.625rem;
+                border: 3px solid $color-black;
+                border-radius: 2px;
+                margin: 0 auto;
+
+                &--low {
+                    background-color: $color-risk-low;
+                }
+            }
+
+            & > * {
+                position: relative;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 3px;
+                height: 100%;
+                background-color: $color-white;
+                border-radius: 1rem;
+            }
+        }
+    }
+
+    &__estado {
+        position: relative;
+
+        &-select {
+            position: absolute;
+            top: 1.875rem;
+            right: 2.5rem;
+            background-image: url("../images/i-caret.svg");
+            background-repeat: no-repeat;
+            background-size: auto 20%;
+            background-position: 90% 50%;
+            appearance: none;
+            padding: 5px 5rem 5px 1rem;
+            border: 0;
+            background-color: $color-gray-lgt-3;
+            font-family: $font-main;
+            color: $color-dark-2;
+            font-weight: 300;
+        }
+
+        &-img {
+            width: 100%;
+        }
+    }
+
+    &__referencias {
+        @include atSmall {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 3.333rem;
+        }
+
+        &-title {
+            margin-bottom: 3.333rem;
+            @include atSmall {
+                margin-bottom: 0;
+            }
+            @include atMedium {
+                margin-bottom: 2rem;
+                margin-right: 3rem;
+            }
+        }
+
+        &-list {
+            width: 100%;
+            margin: -10px;
+            @include atSmall {
+                margin: 0;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+            @include atMedium {
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+            }
+        }
+
+        &-item {
+            text-align: center;
+            display: inline-block;
+            margin: 10px;
+            @include atSmall {
+                width: 25%;
+                margin: 0 0 2rem 0;
+            }
+            @include atMedium {
+                margin: 0;
+                width: auto;
+            }
+
+            &-icon {
+                height: 5.833rem;
+                margin-bottom: 1.667rem;
+                @include atSmall {
+                    height: 4.375rem;
+                    margin-bottom: 1.25rem;
+                }
+                @include atMedium {
+                    height: 3.5rem;
+                }
+                @include atLarge {
+                    height: 4.375rem;
+                }
+            }
+
+            &-label {
+                @include atMedium {
+                    font-size: 1.25rem;
+                }
+                @include atLarge {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}

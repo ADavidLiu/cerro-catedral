@@ -1,0 +1,96 @@
+.form {
+    &__input-wrapper {
+        position: relative;
+    }
+
+    &__input-controls {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+
+    &__input-control {
+        cursor: pointer;
+        width: 1rem;
+        display: block;
+        @include atSmall {
+            width: .75rem;
+        }
+
+        & + & {
+            margin-top: 5px;
+        }
+    }
+    
+    &__input {
+        appearance: none;
+        background-color: $color-gray-lgt-2;
+        color: $color-black;
+        text-align: center;
+        width: 100%;
+        display: block;
+        appearance: none;
+        @extend .paragraph;
+        @extend .paragraph--big;
+        @include atSmall {
+            width: auto;
+        }
+
+        &:focus {
+            outline: none !important;
+        }
+
+        &--number {
+            height: 3.333rem;
+            border-radius: 1rem;
+            padding: 0 20px 0 10px;
+            @include atSmall {
+                height: 2.5rem;
+                width: 100%;
+                border-radius: .65rem;
+            }
+            @include atMedium {
+                margin-left: .75rem;
+                width: 4.5rem;
+            }
+        }
+
+        &--radio {
+            display: none;
+
+            &:checked {
+                & + .form__radio-label {
+                    background-color: $color-primary;
+                    
+                    * {
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+
+    &__radio-label {
+        background-color: $color-gray-lgt-2;
+        padding: 2.5rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        margin: 0;
+        width: 100%;
+        transition: all .25s;
+        @include atSmall {
+            padding: 1.875rem;
+            border-radius: .75rem;
+            height: 100%;
+        }
+
+        &--alt {
+            border-radius: 0;
+            padding: 1.5rem 2.5rem;
+            @include atSmall {
+                padding: 1.125rem 1.875rem;
+            }
+        }
+    }
+}

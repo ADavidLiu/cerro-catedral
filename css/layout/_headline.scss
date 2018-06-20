@@ -1,0 +1,7 @@
+.headline {
+    padding: 3.333rem 0;
+    text-align: center;
+    @include atSmall {
+        padding: 2.5rem 0;
+    }
+}

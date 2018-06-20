@@ -1,0 +1,249 @@
+.tarifario {
+    padding-top: 0;
+
+    &__fecha {
+        @include atSmall {
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin: -1rem;
+        }
+
+        &-item {
+            @include atSmall {
+                width: calc(50% - 2rem);
+                margin: 1rem;
+            }
+            @include atMedium {
+                width: calc(33.33% - 2rem);
+            }
+            @include atLarge {
+                flex: 1 1 0;
+            }
+
+            & + & {
+                margin-top: 2rem;
+                @include atSmall {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+
+    &__personas {
+        @include atSmall {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        @include atMedium {
+            justify-content: flex-start;
+        }
+
+        &-item {
+            @include atSmall {
+                flex: 1;
+            }
+            @include atMedium {
+                flex: initial;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .form__label {
+                @include atMedium {
+                    margin-bottom: 0;
+                }
+
+                h4 {
+                    @include atMedium {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            & + & {
+                margin-top: 2rem;
+                @include atSmall {
+                    margin-top: 0;
+                    margin-left: 2rem;
+                }
+                @include atExtralarge {
+                    margin-left: 5rem;
+                }
+            }
+        }
+    }
+
+    &__pase {
+        @include atSmall {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        &-item {
+            width: 100%;
+            margin-bottom: 10px;
+            @include atSmall {
+                width: calc(50% - 10px);
+                margin-bottom: 5px;
+            }
+
+            &--full {
+                width: 100%;
+            }
+        }
+    }
+
+    &__tarifa {
+        background-image: linear-gradient(to bottom right, $color-primary 50%, $color-primary-alt-3 50%);
+        position: relative;
+        padding: 5rem 2.5rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        @include atSmall {
+            padding: 5rem;
+            border-radius: .75rem;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &-main {
+                display: inline-block;
+            }
+        }
+
+        &-info {
+            text-align: left;
+            padding-top: 3.333rem;
+            margin-top: 3.333rem;
+            position: relative;
+            @include atSmall {
+                margin-top: 2.5rem;
+                padding-top: 2.5rem;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: -2px;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                border-radius: 1rem;
+                background-color: $color-white;
+            }
+        }
+
+        &-btn {
+            background-color: $color-white;
+            border-radius: 1.75rem;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0px 0px 19px 1px rgba(1, 0, 2, 0.2);
+            color: $color-primary;
+            font-weight: 500;
+            transition: all .25s;
+            margin-top: 5rem;
+            @include atSmall {
+                border-radius: 1.25rem;
+                padding: 1rem 1.25rem;
+            }
+
+            &:hover {
+                background-color: $color-primary-drk;
+                color: $color-white;
+            }
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("../images/tarifa-overlay.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: .25;
+            pointer-events: none;
+        }
+    }
+
+    &__table {
+        overflow-x: auto;
+
+        &-titles {
+            background-image: linear-gradient(to right, #0080c2, #3bafd4);
+
+            th {
+                &:first-child {
+                    background-color: $color-white;
+                }
+            }
+
+            & + tr {
+                td {
+                    padding-top: 2rem;
+                    @include atSmall {
+                        padding-top: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        table {
+            min-width: 150vw;
+            @include atSmall {
+                min-width: 0;
+                width: 100%;
+            }
+        }
+
+        th,
+        td {
+            font-weight: 400;
+            padding: 10px 5px;
+            text-align: center;
+            color: $color-white;
+            @extend .heading-quaternary;
+            @extend .heading-quaternary--med;
+
+            &.title {
+                border-bottom: 0;
+                color: $color-primary;
+                padding: 0 5px;
+            }
+        }
+
+        td {
+            color: $color-dark;
+            border-bottom: 2px solid $color-gray;
+
+            &:first-child {
+                font-weight: 500;
+                text-align: left;
+                width: 15rem;
+                @include atSmall {
+                    width: 11.25rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,115 @@
+.footer {
+    background-image: url("../images/footer-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10rem 0;
+    @include atSmall {
+        padding-top: 17.1875rem;
+        padding-bottom: 18.75rem;
+    }
+
+    &__wrapper {
+        text-align: center;
+        @include atSmall {
+            text-align: right;
+        }
+    }
+
+    &__content {
+        max-width: 700px;
+        margin: 0 auto;
+        @include atSmall {
+            margin: 0 0 0 auto;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+
+    &__logos {
+        margin-bottom: 2.5rem;
+        @include atSmall {
+            margin-bottom: 0;
+        } 
+    }
+
+    &__logo {
+        display: inline-block;
+        @include atSmall {
+            display: block;
+        }
+
+        &-img {
+            width: 130px;
+
+            &--data {
+                padding: 0 1.667rem;
+                @include atSmall {
+                    padding: 0 1.25rem;
+                }
+            }
+        }
+
+        & + & {
+            margin-left: 1.5rem;
+            @include atSmall {
+                margin-left: 0;
+                margin-top: 2.1875rem;
+            }
+        }
+    }
+
+    &__copy {
+        flex: 1;
+        text-align: left;
+        @include atSmall {
+            padding-left: 3.125rem;
+        }
+
+        p {
+            line-height: 2.5rem;
+            @include atSmall {
+                line-height: 1.875rem;
+            }
+        }
+    }
+
+    &__contact {
+        text-align: center;
+        margin: 2.5rem 0;
+        @include atSmall {
+            margin: 1.875rem 0;
+            text-align: left;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        @include atSmall {
+            margin-top: 0;
+            justify-content: flex-start;
+        }
+
+        &-item {
+            & + & {
+                margin-left: 1.667rem;
+                @include atSmall {
+                    margin-left: 1.25rem;
+                }
+            }
+
+            &:hover {
+                .footer__social-icon {
+                    transform: scale(1.025);
+                }
+            }
+        }
+
+        &-icon {
+            transition: all .25s;
+            filter: brightness(0) invert(1);
+        }
+    }
+}

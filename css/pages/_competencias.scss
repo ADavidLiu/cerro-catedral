@@ -1,0 +1,54 @@
+.competencias {
+    padding-top: 4rem;
+    @include atSmall {
+        padding-top: 3rem;
+    }
+
+    &__gallery {
+        &-slider {
+            .slick {
+                &-list {
+                    margin: 0 -10px;
+                }
+
+                &-slide {
+                    margin: 0 10px 3.125rem 10px;
+                }
+
+                &-dots {
+                    display: flex !important;
+                    align-items: center;
+                    justify-content: center;
+
+                    li {
+                        height: 1rem;
+                        width: 1rem;
+                        border: 1px solid $color-black;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        transition: all .25s;
+                        @include atSmall {
+                            height: .75rem;
+                            width: .75rem;
+                        }
+
+                        &.slick-active {
+                            background-color: $color-black;
+                        }
+
+                        & + li {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-img {
+            @extend .u-shadow-small;
+            &:focus {
+                outline: none !important;
+            }
+        }
+    }
+}

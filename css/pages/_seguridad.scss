@@ -1,0 +1,65 @@
+.seguridad {
+    &__signals {
+        position: relative;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            &-icon {
+                width: 3.75rem;
+                margin-right: 2.1875rem;
+                @include atSmall {
+                    width: 2.8125rem;
+                }
+            }
+
+            & + & {
+                margin-top: 2.8125rem;
+            }
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 1.875rem;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 90%;
+            background-color: $color-gray;
+            @include atSmall {
+                left: 1.40625rem;
+            }
+        }
+    }
+
+    &__banner {
+        height: 45rem;
+        background-image: url("../images/patrulla-banner.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        @include atSmall {
+            margin-top: -10rem;
+        }
+
+        &-img-wrapper {
+            transform: translateY(50%);
+            width: 100%;
+            padding: 0 15px;
+            margin: 0 auto;
+            @include atSmall {
+                width: 70%;
+                padding: 0;
+            }
+        }
+    }
+}

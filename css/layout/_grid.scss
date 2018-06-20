@@ -1,0 +1,30 @@
+.container-fluid {
+    width: 100%;
+    max-width: 106.25rem;
+    @include atSmall {
+        width: 90%;
+    }
+    @include atLarge {
+        width: 85%;
+    }
+    @include atExtralarge {
+        width: 90%;
+    }
+    @include atHuge {
+        width: 100%;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    &--full {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 96.25rem;
+    }
+
+    &--full-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: none;
+    }
+}

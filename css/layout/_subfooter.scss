@@ -1,0 +1,9 @@
+.subfooter {
+    background-color: $color-black-alt;
+    padding: 1.667rem 0;
+    text-align: center;
+    @include atSmall {
+        text-align: left;
+        padding: 1.25rem 0;
+    }
+}

@@ -1,0 +1,25 @@
+.featured {
+    @include atSmall {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    &__img {
+        height: 15rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        @extend .u-shadow-small;
+        @include atSmall {
+            height: auto;
+        }
+    }
+
+    &__copy {
+        padding: 2.5rem;
+        @include atSmall {
+            padding: 5rem;
+        }
+    }
+}
